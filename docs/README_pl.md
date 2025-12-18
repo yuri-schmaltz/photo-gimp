@@ -26,6 +26,20 @@ Prosta modyfikacja do GIMP-a 3.0+, aby pomóc użytkownikom Adobe Photoshop, zaw
 
 Ten patch został pierwotnie opracowany do pracy z wersją Flatpak GIMP-a dla Linuxa, ale może być używany w prawie każdym formacie pakietu bez ograniczeń, poprzez wyodrębnienie plików do odpowiednich folderów.
 
+### Instalacja skryptem (beta)
+
+- **Linux/macOS:**
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
+- **Windows (PowerShell):**
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File install.ps1
+   ```
+
+Skrypty tworzą kopię zapasową z datą/czasem Twojej obecnej konfiguracji `3.0` GIMP-a przed zastosowaniem PhotoGIMP.
+
 ### Flatpak (Linux)
 
 Aby zainstalować najnowszą wersję PhotoGIMP na swoim systemie Linux używając Flatpak, wykonaj następujące proste kroki:

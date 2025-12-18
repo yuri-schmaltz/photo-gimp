@@ -4,6 +4,17 @@
 
 (file-version 1)
 
+# PhotoGIMP essentials (Photoshop-like)
+(action "file-save" "<Primary>s")
+(action "file-save-as" "<Primary><Shift>s")
+(action "edit-undo" "<Primary>z")
+(action "edit-strong-redo" "<Primary><Shift>z")
+(action "layers-duplicate" "<Primary>j")
+(action "layers-new" "<Primary><Shift>n")
+(action "view-zoom-fit-in" "<Primary>0")
+(action "view-close" "<Primary>w")
+(action "tools-scale" "<Primary>t")
+
 # (action "filters-tile-paper")
 # (action "context-foreground-red-minimum")
 # (action "tools-warp-effect-pixel-size-set")

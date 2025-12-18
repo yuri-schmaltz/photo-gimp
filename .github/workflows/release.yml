@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare artifacts
+        run: |
+          set -e
+          mkdir -p build/PhotoGIMP
+          cp -r .config build/PhotoGIMP/.config
+          cp -r .local build/PhotoGIMP/.local
+          cd build
+          zip -r PhotoGIMP.zip PhotoGIMP
+          zip -r PhotoGIMP-linux.zip PhotoGIMP
+          sha256sum PhotoGIMP.zip PhotoGIMP-linux.zip > SHA256SUMS
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: photogimp-${{ github.ref_name }}
+          path: build/PhotoGIMP*.zip
+
+      - name: Upload checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: checksums-${{ github.ref_name }}
+          path: build/SHA256SUMS
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            build/PhotoGIMP.zip
+            build/PhotoGIMP-linux.zip
+            build/SHA256SUMS
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
