@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - Photoshop-like shortcut activations and reference document (`docs/SHORTCUTS.md`)
 - Release process guide (`RELEASE.md`), checksum guide (`SHA256SUMS.md`), and PNG optimization guide (`docs/PNG_OPTIMIZATION.md`)
 - Project manifest (`photogimp.manifest`) describing target versions and features
+- Release artifacts now bundle manifest, installers, and changelog
 
 ### Changed
 - README files now include scripted install instructions and badges

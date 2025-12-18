@@ -21,6 +21,10 @@ jobs:
           mkdir -p build/PhotoGIMP
           cp -r .config build/PhotoGIMP/.config
           cp -r .local build/PhotoGIMP/.local
+          cp photogimp.manifest build/PhotoGIMP/photogimp.manifest
+          cp install.sh build/PhotoGIMP/install.sh
+          cp install.ps1 build/PhotoGIMP/install.ps1
+          cp CHANGELOG.md build/PhotoGIMP/CHANGELOG.md
           cd build
           zip -r PhotoGIMP.zip PhotoGIMP
           zip -r PhotoGIMP-linux.zip PhotoGIMP
