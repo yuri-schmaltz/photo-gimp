@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📺 Diolinux YouTube Channel
+    url: https://youtube.com/Diolinux
+    about: Watch tutorials and updates about PhotoGIMP
+  - name: 💬 Discussions
+    url: https://github.com/Diolinux/PhotoGIMP/discussions
+    about: Ask questions and discuss with the community

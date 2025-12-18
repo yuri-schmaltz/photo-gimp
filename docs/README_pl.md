@@ -81,7 +81,72 @@ Aby zainstalować najnowszą wersję PhotoGIMP na macOS:
 
 :bulb: Wskazówki:
 - Jeśli chcesz wykonać kopię zapasową swoich obecnych ustawień GIMP-a przed instalacją PhotoGIMP, skopiuj cały folder GIMP z `~/Library/Application Support/GIMP` w bezpieczne miejsce przed kontynuowaniem instalacji.
+## ⚠ Rozwiązywanie Problemów
 
+### PhotoGIMP nie ładuje się / GIMP wygląda tak samo
+
+**Rozwiązanie:**
+1. Upewnij się, że uruchomiłeś GIMP-a przynajmniej raz przed instalacją PhotoGIMP
+2. Sprawdź, czy pliki są we właściwej lokalizacji:
+   - **Windows:** `%APPDATA%\GIMP\3.0\` powinien zawierać foldery takie jak `themes`, `splashes`, itp.
+   - **Linux (Flatpak):** `~/.var/app/org.gimp.GIMP/config/GIMP/3.0/`
+   - **Linux (natywny):** `~/.config/GIMP/3.0/`
+   - **macOS:** `~/Library/Application Support/GIMP/3.0/`
+3. Uruchom ponownie GIMP-a całkowicie (zamknij wszystkie okna)
+4. Sprawdź, czy ekran powitalny pokazuje "PhotoGIMP" podczas uruchamiania GIMP-a
+
+### Skróty klawiaturowe nie działają
+
+**Rozwiązanie:**
+1. Sprawdź, czy plik `shortcutsrc` istnieje w folderze konfiguracji GIMP-a
+2. Niektóre skróty mogą kolidować ze skrótami systemowymi
+3. Możesz dostosować skróty w GIMP: Edycja > Skróty Klawiaturowe
+4. Upewnij się, że używasz właściwego klawisza modyfikatora:
+   - Windows/Linux: `Ctrl`
+   - macOS: `Cmd` (Command)
+
+### GIMP nie uruchamia się po instalacji PhotoGIMP
+
+**Rozwiązanie:**
+1. Przywróć kopię zapasową (jeśli ją utworzyłeś)
+2. Lub usuń folder konfiguracji GIMP-a i zainstaluj ponownie:
+   - **Windows:** Usuń `%APPDATA%\GIMP\3.0\`
+   - **Linux:** Usuń `~/.config/GIMP/3.0/` lub `~/.var/app/org.gimp.GIMP/config/GIMP/3.0/`
+   - **macOS:** Usuń `~/Library/Application Support/GIMP/3.0/`
+3. Uruchom GIMP-a (utworzy domyślną konfigurację)
+4. Spróbuj zainstalować PhotoGIMP ponownie, dokładnie wykonując wszystkie kroki
+
+### Ikona/nazwa nie zmieniła się (tylko Linux)
+
+**Rozwiązanie:**
+1. Upewnij się, że skopiowałeś folder `.local` do katalogu domowego
+2. Zaktualizuj bazę danych pulpitu:
+   ```bash
+   update-desktop-database ~/.local/share/applications/
+   ```
+3. Dla Flatpak, ikona może nie zmienić się w niektórych środowiskach pulpitu - to jest oczekiwane
+
+### Błąd: "Odmowa dostępu" lub "Access denied"
+
+**Rozwiązanie:**
+- **Windows:** Uruchom Eksplorator plików jako administrator lub sprawdź, czy GIMP jest uruchomiony
+- **Linux/macOS:** Sprawdź uprawnienia plików. Nie powinieneś potrzebować sudo dla plików konfiguracyjnych użytkownika
+- Upewnij się, że GIMP jest całkowicie zamknięty przed kopiowaniem plików
+
+### Jak odinstalować PhotoGIMP
+
+**Aby przywrócić GIMP do ustawień domyślnych:**
+1. Jeśli utworzyłeś kopię zapasową, przywróć ją, kopiując z powrotem do folderu konfiguracji GIMP-a
+2. Jeśli nie utworzyłeś kopii zapasowej:
+   - Zamknij GIMP-a całkowicie
+   - Usuń folder konfiguracji GIMP-a (lokalizacje wymienione powyżej)
+   - Uruchom GIMP-a - utworzy świeżą domyślną konfigurację
+
+### Nadal masz problemy?
+
+1. Sprawdź istniejące [GitHub Issues](https://github.com/Diolinux/PhotoGIMP/issues) - Twój problem mógł już zostać rozwiązany
+2. Utwórz nowe zgłoszenie używając szablonu "Installation Help"
+3. Dołącz: Twój system operacyjny, wersję GIMP-a, dokładny komunikat błędu i kroki, które wykonałeś
 ## Podziękowania
 
 * Ten projekt nie byłby możliwy bez wspaniałego zespołu GIMP-a.

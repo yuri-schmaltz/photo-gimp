@@ -1,5 +1,12 @@
 # 🎨 PhotoGIMP
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Diolinux/PhotoGIMP)](https://github.com/Diolinux/PhotoGIMP/releases/latest)
+[![GitHub all releases](https://img.shields.io/github/downloads/Diolinux/PhotoGIMP/total)](https://github.com/Diolinux/PhotoGIMP/releases)
+[![GitHub stars](https://img.shields.io/github/stars/Diolinux/PhotoGIMP)](https://github.com/Diolinux/PhotoGIMP/stargazers)
+[![GitHub license](https://img.shields.io/github/license/Diolinux/PhotoGIMP)](https://github.com/Diolinux/PhotoGIMP/blob/master/LICENSE)
+[![GIMP Version](https://img.shields.io/badge/GIMP-3.0+-orange)](https://www.gimp.org/)
+[![YouTube Channel](https://img.shields.io/badge/YouTube-Diolinux-red?logo=youtube)](https://youtube.com/Diolinux)
+
 <img src="./.local/share/icons/hicolor/256x256/256x256.png" align="right" alt="PhotoGimp application icon" title="PhotoGimp application icon">
 
 A patch for optimizing GIMP 3.0+ for Adobe Photoshop users, including features like:
@@ -89,6 +96,73 @@ In order to install the newest version of PhotoGIMP on your macOS:
 
 :bulb: Tips:
 - If you want to backup your current GIMP settings before installing PhotoGIMP, copy the entire GIMP folder from `~/Library/Application Support/GIMP` to a safe location before proceeding with the installation.
+
+## ⚠ Troubleshooting
+
+### PhotoGIMP is not loading / GIMP looks the same
+
+**Solution:**
+1. Make sure you started GIMP at least once before installing PhotoGIMP
+2. Verify files are in the correct location:
+   - **Windows:** `%APPDATA%\GIMP\3.0\` should contain folders like `themes`, `splashes`, etc.
+   - **Linux (Flatpak):** `~/.var/app/org.gimp.GIMP/config/GIMP/3.0/`
+   - **Linux (native):** `~/.config/GIMP/3.0/`
+   - **macOS:** `~/Library/Application Support/GIMP/3.0/`
+3. Restart GIMP completely (close all windows)
+4. Check if the splash screen shows "PhotoGIMP" when GIMP starts
+
+### Keyboard shortcuts are not working
+
+**Solution:**
+1. Check if the `shortcutsrc` file exists in your GIMP config folder
+2. Some shortcuts may conflict with your operating system shortcuts
+3. You can customize shortcuts in GIMP: Edit > Keyboard Shortcuts
+4. Make sure you're using the correct modifier key:
+   - Windows/Linux: `Ctrl`
+   - macOS: `Cmd` (Command)
+
+### GIMP won't start after installing PhotoGIMP
+
+**Solution:**
+1. Restore your backup (if you created one)
+2. Or delete the GIMP configuration folder and reinstall:
+   - **Windows:** Delete `%APPDATA%\GIMP\3.0\`
+   - **Linux:** Delete `~/.config/GIMP/3.0/` or `~/.var/app/org.gimp.GIMP/config/GIMP/3.0/`
+   - **macOS:** Delete `~/Library/Application Support/GIMP/3.0/`
+3. Start GIMP (it will create default config)
+4. Try installing PhotoGIMP again, following all steps carefully
+
+### Icon/Name didn't change (Linux only)
+
+**Solution:**
+1. Make sure you copied the `.local` folder to your home directory
+2. Update desktop database:
+   ```bash
+   update-desktop-database ~/.local/share/applications/
+   ```
+3. For Flatpak, the icon might not change in some desktop environments - this is expected
+
+### Error: "Permission denied" or "Access denied"
+
+**Solution:**
+- **Windows:** Run File Explorer as administrator, or check if GIMP is currently running
+- **Linux/macOS:** Check file permissions. You shouldn't need sudo for user config files
+- Make sure GIMP is completely closed before copying files
+
+### How to uninstall PhotoGIMP
+
+**To restore GIMP to default:**
+1. If you created a backup, restore it by copying back to the GIMP config folder
+2. If you didn't create a backup:
+   - Close GIMP completely
+   - Delete the GIMP config folder (locations listed above)
+   - Start GIMP - it will create a fresh default configuration
+
+### Still having issues?
+
+1. Check existing [GitHub Issues](https://github.com/Diolinux/PhotoGIMP/issues) - your problem might already be solved
+2. Create a new issue using the "Installation Help" template
+3. Include: Your OS, GIMP version, exact error message, and steps you followed
 
 ## Credits
 
