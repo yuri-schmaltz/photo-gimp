@@ -95,6 +95,13 @@ Aby zainstalować najnowszą wersję PhotoGIMP na macOS:
 
 :bulb: Wskazówki:
 - Jeśli chcesz wykonać kopię zapasową swoich obecnych ustawień GIMP-a przed instalacją PhotoGIMP, skopiuj cały folder GIMP z `~/Library/Application Support/GIMP` w bezpieczne miejsce przed kontynuowaniem instalacji.
+
+## 🧭 Wersjonowanie i manifest
+
+- Wydania i tagi używają SemVer w formacie `vX.Y.Z`; PhotoGIMP jest obecnie kierowany na GIMP 3.0.x.
+- Obsługiwane cele i listę funkcji znajdziesz w manifeście [photogimp.manifest](../photogimp.manifest).
+- Opisy zmian dla każdej wersji są w [CHANGELOG.md](../CHANGELOG.md).
+
 ## ⚠ Rozwiązywanie Problemów
 
 ### PhotoGIMP nie ładuje się / GIMP wygląda tak samo

@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - README files now include scripted install instructions and badges
+- Documented SemVer/release manifest sources in README files
 
 ### Fixed
 - n/a

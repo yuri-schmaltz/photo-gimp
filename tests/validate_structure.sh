@@ -14,6 +14,7 @@ require ".config/GIMP/3.0/shortcutsrc"
 require ".local/share/icons/hicolor/256x256/256x256.png"
 require "LICENSE"
 require "README.md"
+require "photogimp.manifest"
 
 if [[ $missing -ne 0 ]]; then
   exit 1
