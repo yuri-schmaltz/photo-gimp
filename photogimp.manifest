@@ -1,0 +1,17 @@
+{
+  "photogimp_version": "3.0.0",
+  "gimp_target_version": "3.0.x",
+  "created_at": "2025-12-18",
+  "features": [
+    "photoshop_shortcuts",
+    "custom_theme",
+    "splash_screen",
+    "install_scripts",
+    "ci_cd_workflows"
+  ],
+  "installers": [
+    "manual-zip",
+    "script-linux-macos",
+    "script-windows"
+  ]
+}
